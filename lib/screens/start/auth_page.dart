@@ -168,6 +168,7 @@ class _AuthPageState extends State<AuthPage> {
     await Future.delayed(Duration(seconds: 3));
 
     setState(() {
+
       _verificationStatus = VerificationStatus.verificationDone;
     });
   }
