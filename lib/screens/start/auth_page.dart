@@ -1,5 +1,6 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 
 import '../../constants/common_size.dart';
 
@@ -8,6 +9,9 @@ class AuthPage extends StatelessWidget {
 
   final inputBorder =
       OutlineInputBorder(borderSide: BorderSide(color: Colors.grey));
+
+  TextEditingController _textEditingController =
+      TextEditingController(text: "010");
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +25,7 @@ class AuthPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(common_padding),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Row(
                 children: [
@@ -41,12 +46,34 @@ class AuthPage extends StatelessWidget {
                 height: common_padding,
               ),
               TextFormField(
-                keyboardType: TextInputType.number,
+                controller: _textEditingController,
+                keyboardType: TextInputType.phone,
+                inputFormatters: [MaskedInputFormatter("000 0000 0000")],
                 decoration: InputDecoration(
                   focusedBorder: inputBorder,
                   border: inputBorder,
                 ),
-              )
+              ),
+              SizedBox(
+                height: common_small_padding,
+              ),
+              TextButton(onPressed: () {}, child: Text('인증문자 발송')),
+              SizedBox(
+                height: common_padding,
+              ),
+              TextFormField(
+                controller: _textEditingController,
+                keyboardType: TextInputType.phone,
+                inputFormatters: [MaskedInputFormatter("000 0000 0000")],
+                decoration: InputDecoration(
+                  focusedBorder: inputBorder,
+                  border: inputBorder,
+                ),
+              ),
+              SizedBox(
+                height: common_small_padding,
+              ),
+              TextButton(onPressed: () {}, child: Text('인증문자 발송')),
             ],
           ),
         ),
