@@ -54,6 +54,11 @@ class TomatoApp extends StatelessWidget {
         hintColor: Colors.grey[350],
         primarySwatch: Colors.red,
         fontFamily: 'DoHyeon',
+        textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.red,
+                primary: Colors.white,
+                minimumSize: Size(48, 48))),
         textTheme: TextTheme(
             headline3: TextStyle(fontFamily: 'DoHyeon'),
             button: TextStyle(color: Colors.white)),

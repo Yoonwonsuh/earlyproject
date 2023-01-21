@@ -31,9 +31,6 @@ class AdressPage extends StatelessWidget {
           ),
           TextButton(
               onPressed: () {},
-              style: TextButton.styleFrom(
-                  minimumSize: Size(10, 48),
-                  backgroundColor: Theme.of(context).primaryColor),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
